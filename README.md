@@ -1,6 +1,6 @@
 # Officina
 
-Officina (Latin: the apothecary's workshop) is the umbrella for a local, verifiable DMPK toolchain built by Abdou as a portfolio project toward a PhD in DMPK/AI. Everything runs on one consumer PC (RTX 3060, 12 GB); at run time the assistant sends nothing off the machine.
+Officina (Latin: the apothecary's workshop) is the umbrella for a local, verifiable DMPK toolchain. Everything runs on one consumer PC (RTX 3060, 12 GB); at run time the assistant sends nothing off the machine.
 
 **In one sentence:** an open, deterministic and verified pharmacokinetic engine, with a local assistant that never computes a number itself. It is a research prototype: no agency accepts or endorses software, and Officina claims no regulatory status; what it offers is reproducibility (every number re-derivable from a pinned version) and a published validation record.
 
