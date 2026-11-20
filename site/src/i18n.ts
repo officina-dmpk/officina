@@ -82,6 +82,7 @@ export const fr: Record<string, string> = {
 
   'link.docs': 'Documentation →',
   'link.app': 'Application web →',
+  'link.download': 'Application de bureau (Windows, Linux) →',
   'link.arch': 'Architecture & Benchmarks →',
   'link.report': 'Rapport n°2 →',
 
