@@ -28,7 +28,7 @@ export const fr: Record<string, string> = {
 
   'lanes.title': 'Qui fait quoi, dans l’ordre',
   'lanes.desc':
-    'Six étapes sur quatre couloirs. Vous posez une question. Apothicaire planifie. Caladrius calcule chaque nombre et le scelle. Apothicaire explique. The Gate vérifie que chaque nombre a une source. Vous lisez la réponse.',
+    'Six étapes sur quatre couloirs. Vous posez une question. Apothicaire planifie. Caladrius calcule chaque nombre et le scelle. Apothicaire explique. The Gate vérifie que chaque nombre a une source ; s\'il en manque une, Apothicaire réécrit sa réponse une fois, et ce qui reste s\'affiche dans un badge. Vous lisez la réponse.',
   'st1.a': '1. Demander',
   'st1.b': 'une question sur',
   'st1.c': 'vos données',
