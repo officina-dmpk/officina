@@ -172,6 +172,8 @@ section.block { padding: 72px 0; border-bottom: 1px solid var(--border); scroll-
 .lane-arrow.green { stroke: var(--caladrius-line); }
 .lane-head { fill: var(--ink-secondary); }
 .lane-head.green { fill: var(--caladrius-line); }
+.lane-arrow.retry { stroke: var(--apothicaire-mark); stroke-dasharray: 6 5; }
+.lane-head.retry { fill: var(--apothicaire-mark); }
 .step-text { font-size: 14px; fill: var(--ink); }
 .step-text .b { font-weight: 600; }
 .lane-name { font-size: 15px; font-weight: 600; fill: var(--ink); }
@@ -180,6 +182,7 @@ section.block { padding: 72px 0; border-bottom: 1px solid var(--border); scroll-
 .lane-role { font-family: var(--font-mono); font-size: 12px; fill: var(--ink-muted); }
 .lane-label { font-size: 13px; fill: var(--ink-secondary); }
 .lane-label .cal { fill: var(--caladrius); }
+.lane-label .retry { fill: var(--apothicaire-mark); }
 .arch-flow { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: stretch; }
 .mcp-bridge { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 12px 4px; }
 .mcp-pill { font-family: var(--font-mono); font-size: 0.74rem; font-weight: 500; padding: 5px 10px; border: 1px solid var(--border-strong); border-radius: 999px; background: var(--surface); letter-spacing: 0.04em; }

@@ -70,10 +70,11 @@
             <div class="lanes-scroll">
               <svg viewBox="64 160 1152 552" role="img" aria-labelledby="lanes-title lanes-desc">
                 <title id="lanes-title" data-i18n="lanes.title">Who does what, in order</title>
-                <desc id="lanes-desc" data-i18n="lanes.desc">Six steps across four lanes. You ask a question. Apothicaire plans. Caladrius computes every number and seals it. Apothicaire explains. The Gate checks that each number has a source. You read the answer.</desc>
+                <desc id="lanes-desc" data-i18n="lanes.desc">Six steps across four lanes. You ask a question. Apothicaire plans. Caladrius computes every number and seals it. Apothicaire explains. The Gate checks that each number has a source; if one has none, Apothicaire rewrites its answer once, and what remains is shown in a badge. You read the answer.</desc>
                 <defs>
                   <marker id="arrow" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2"><path d="M0 0 L4 2 L0 4 Z" class="lane-head" /></marker>
                   <marker id="arrow-green" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2"><path d="M0 0 L4 2 L0 4 Z" class="lane-head green" /></marker>
+                  <marker id="arrow-retry" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2"><path d="M0 0 L4 2 L0 4 Z" class="lane-head retry" /></marker>
                 </defs>
                 <rect class="band band-you" x="64" y="168" width="1152" height="128" rx="4" />
                 <rect class="band band-apo" x="64" y="304" width="1152" height="128" rx="4" />
@@ -84,6 +85,7 @@
                 <path class="lane-arrow green" d="M708 504 H800 V417" marker-end="url(#arrow-green)" />
                 <path class="lane-arrow" d="M868 368 H960 V591" marker-end="url(#arrow)" />
                 <path class="lane-arrow" d="M1028 640 H1120 V281" marker-end="url(#arrow)" />
+                <path class="lane-arrow retry" d="M915 596 V396 H873" marker-end="url(#arrow-retry)" />
                 <rect class="step step-you" x="252.5" y="188.5" width="135" height="87" rx="4" />
                 <rect class="step step-apo" x="412.5" y="324.5" width="135" height="87" rx="4" />
                 <rect class="step step-cal" x="572.5" y="460.5" width="135" height="87" rx="4" />
@@ -113,8 +115,8 @@
                 <g class="lane-label">
                   <text x="652" y="418" data-i18n="ll.mcp">MCP call</text>
                   <text x="812" y="462" class="cal" data-i18n="ll.sealed">sealed result</text>
-                  <text x="876" y="636" text-anchor="end" data-i18n="ll.retry1">A number without a source:</text>
-                  <text x="876" y="654" text-anchor="end" data-i18n="ll.retry2">one retry, then a visible badge.</text>
+                  <text x="876" y="636" text-anchor="end" class="retry" data-i18n="ll.retry1">A number without a source:</text>
+                  <text x="876" y="654" text-anchor="end" class="retry" data-i18n="ll.retry2">one retry, then a visible badge.</text>
                 </g>
               </svg>
             </div>
