@@ -1,16 +1,380 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <title>Officina</title>
-    <meta name="description" content="Moteur PK ouvert, déterministe et vérifié, avec un assistant local qui ne calcule jamais." />
+    <title>Officina: Independent Research Laboratory</title>
+    <meta
+      name="description"
+      content="Officina develops deterministic scientific software in Rust, studies tool-augmented local language models, and explores alternative statistical and neural architectures."
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Set the theme before the first paint: the saved choice, else the system's.
+      try {
+        var t = localStorage.getItem('officina-theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch (e) {}
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <noscript>Officina: https://github.com/abdou-rgd/officina</noscript>
-    <script type="module" src="/src/main.tsx"></script>
+    <header class="site-header">
+      <div class="container nav-inner">
+        <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Officina</span></a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#architecture" data-i18n="nav.arch">Architecture</a>
+          <a href="#research" data-i18n="nav.research">Research</a>
+          <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
+          <a href="#publications" data-i18n="nav.pubs">Publications</a>
+          <a href="#team" data-i18n="nav.team">Team</a>
+        </nav>
+        <div class="nav-actions">
+          <button type="button" class="theme-btn" id="theme-toggle" aria-label="Switch to dark mode">
+            <svg class="icon-sun" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+            <svg class="icon-moon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+          </button>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr" aria-pressed="false">FR</button>
+          </div>
+          <a href="https://github.com/officina-dmpk" class="btn-outline-sm">GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="container">
+          <span class="eyebrow" data-i18n="hero.eyebrow">Independent Research Laboratory</span>
+          <h1 data-i18n="hero.title">Computational science, healthcare, and local AI architectures.</h1>
+          <p class="hero-sub" data-i18n="hero.sub">Officina develops deterministic scientific software in Rust, studies tool-augmented local language models, and explores alternative statistical and neural architectures.</p>
+          <div class="hero-actions">
+            <a href="#architecture" class="btn-primary" data-i18n="hero.cta1">Core Architecture</a>
+            <a href="#publications" class="btn-secondary" data-i18n="hero.cta2">Publications &amp; Talks</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="architecture" class="block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-index" data-i18n="s1.index">01 / Core Architecture</span>
+              <h2 class="section-title" data-i18n="s1.title">Pharmacometrics &amp; Verifiable Local Agents</h2>
+            </div>
+            <p class="section-desc" data-i18n="s1.desc">A modular workflow separating numerical execution from linguistic reasoning, ensuring every reported figure is traceable and reproducible.</p>
+          </div>
+
+          <figure class="lanes">
+            <div class="lanes-scroll">
+              <svg viewBox="64 160 1152 552" role="img" aria-labelledby="lanes-title lanes-desc">
+                <title id="lanes-title" data-i18n="lanes.title">Who does what, in order</title>
+                <desc id="lanes-desc" data-i18n="lanes.desc">Six steps across four lanes. You ask a question. Apothicaire plans. Caladrius computes every number and seals it. Apothicaire explains. The Gate checks that each number has a source. You read the answer.</desc>
+                <defs>
+                  <marker id="arrow" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2"><path d="M0 0 L4 2 L0 4 Z" class="lane-head" /></marker>
+                  <marker id="arrow-green" orient="auto" markerWidth="5" markerHeight="5" refX="2" refY="2"><path d="M0 0 L4 2 L0 4 Z" class="lane-head green" /></marker>
+                </defs>
+                <rect class="band band-you" x="64" y="168" width="1152" height="128" rx="4" />
+                <rect class="band band-apo" x="64" y="304" width="1152" height="128" rx="4" />
+                <rect class="band band-cal" x="64" y="440" width="1152" height="128" rx="4" />
+                <rect class="band band-gate" x="64.5" y="576.5" width="1151" height="127" rx="4" />
+                <path class="lane-arrow" d="M388 232 H480 V319" marker-end="url(#arrow)" />
+                <path class="lane-arrow" d="M548 368 H640 V455" marker-end="url(#arrow)" />
+                <path class="lane-arrow green" d="M708 504 H800 V417" marker-end="url(#arrow-green)" />
+                <path class="lane-arrow" d="M868 368 H960 V591" marker-end="url(#arrow)" />
+                <path class="lane-arrow" d="M1028 640 H1120 V281" marker-end="url(#arrow)" />
+                <rect class="step step-you" x="252.5" y="188.5" width="135" height="87" rx="4" />
+                <rect class="step step-apo" x="412.5" y="324.5" width="135" height="87" rx="4" />
+                <rect class="step step-cal" x="572.5" y="460.5" width="135" height="87" rx="4" />
+                <rect class="step step-apo" x="732.5" y="324.5" width="135" height="87" rx="4" />
+                <rect class="step step-gate" x="892.5" y="596.5" width="135" height="87" rx="4" />
+                <rect class="step step-you" x="1052.5" y="188.5" width="135" height="87" rx="4" />
+                <g class="step-text" text-anchor="middle">
+                  <text x="320" y="218"><tspan class="b" data-i18n="st1.a">1. Ask</tspan><tspan x="320" dy="20" data-i18n="st1.b">a question about</tspan><tspan x="320" dy="20" data-i18n="st1.c">your data</tspan></text>
+                  <text x="480" y="354"><tspan class="b" data-i18n="st2.a">2. Plan</tspan><tspan x="480" dy="20" data-i18n="st2.b">choose the</tspan><tspan x="480" dy="20" data-i18n="st2.c">command to run</tspan></text>
+                  <text x="640" y="490"><tspan class="b" data-i18n="st3.a">3. Compute</tspan><tspan x="640" dy="20" data-i18n="st3.b">every number,</tspan><tspan x="640" dy="20" data-i18n="st3.c">then seal it</tspan></text>
+                  <text x="800" y="354"><tspan class="b" data-i18n="st4.a">4. Explain</tspan><tspan x="800" dy="20" data-i18n="st4.b">the result,</tspan><tspan x="800" dy="20" data-i18n="st4.c">in plain words</tspan></text>
+                  <text x="960" y="626"><tspan class="b" data-i18n="st5.a">5. Check</tspan><tspan x="960" dy="20" data-i18n="st5.b">each number</tspan><tspan x="960" dy="20" data-i18n="st5.c">has a source</tspan></text>
+                  <text x="1120" y="218"><tspan class="b" data-i18n="st6.a">6. Read</tspan><tspan x="1120" dy="20" data-i18n="st6.b">an answer you</tspan><tspan x="1120" dy="20" data-i18n="st6.c">can re-derive</tspan></text>
+                </g>
+                <g class="lane-name">
+                  <text x="80" y="195" data-i18n="ln.you">You</text>
+                  <text x="80" y="331" class="apo">Apothicaire</text>
+                  <text x="80" y="467" class="cal">Caladrius</text>
+                  <text x="80" y="603">The Gate</text>
+                </g>
+                <g class="lane-role">
+                  <text x="80" y="216" data-i18n="lr.you">at your own PC</text>
+                  <text x="80" y="352" data-i18n="lr.apo">words · local 27B</text>
+                  <text x="80" y="488" data-i18n="lr.cal">numbers · Rust engine</text>
+                  <text x="80" y="624" data-i18n="lr.gate">check · no model</text>
+                </g>
+                <g class="lane-label">
+                  <text x="652" y="418" data-i18n="ll.mcp">MCP call</text>
+                  <text x="812" y="462" class="cal" data-i18n="ll.sealed">sealed result</text>
+                  <text x="876" y="636" text-anchor="end" data-i18n="ll.retry1">A number without a source:</text>
+                  <text x="876" y="654" text-anchor="end" data-i18n="ll.retry2">one retry, then a visible badge.</text>
+                </g>
+              </svg>
+            </div>
+          </figure>
+
+          <div class="arch-flow">
+            <article class="card">
+              <div>
+                <div class="card-top">
+                  <div class="card-identity">
+                    <div class="logo-frame caladrius" aria-hidden="true"><span class="logo-mask"></span></div>
+                    <div>
+                      <h3>Caladrius</h3>
+                      <div class="card-subtitle" data-i18n="cal.sub">Rust · Pharmacokinetics (PK)</div>
+                    </div>
+                  </div>
+                  <span class="tag tag-caladrius" data-i18n="tag.opensource">Open Source</span>
+                </div>
+                <div class="card-body">
+                  <p data-i18n="cal.desc">Pharmacokinetic engine written in Rust: non-compartmental analysis, compartmental models and weighted fitting, built for strict cross-platform reproducibility.</p>
+                  <ul class="spec-list">
+                    <li data-i18n="cal.f1">Every answer carries a <code>SHA-256</code> seal, and a saved project can be replayed step by step.</li>
+                    <li data-i18n="cal.f2">The same digits on Linux, Windows, macOS and WebAssembly, compared in CI on every build.</li>
+                    <li data-i18n="cal.f3"><code>48,955 of 48,955</code> reference values reproduced against PKNCA, 256-bit closed forms and R fits.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/officina-dmpk/caladrius">GitHub →</a>
+                <a href="https://github.com/officina-dmpk/caladrius/blob/main/docs/usage.md" data-i18n="link.docs">Documentation →</a>
+                <a href="./app/" data-i18n="link.app">Browser app →</a>
+              </div>
+            </article>
+
+            <div class="mcp-bridge" role="img" aria-label="Model Context Protocol">
+              <div class="mcp-line"></div>
+              <span class="mcp-pill">MCP</span>
+              <div class="mcp-line"></div>
+            </div>
+
+            <article class="card">
+              <div>
+                <div class="card-top">
+                  <div class="card-identity">
+                    <div class="logo-frame apothicaire" aria-hidden="true"><span class="logo-mask"></span></div>
+                    <div>
+                      <h3>Apothicaire</h3>
+                      <div class="card-subtitle" data-i18n="apo.sub">Local 27B LLM · Agent</div>
+                    </div>
+                  </div>
+                  <span class="tag tag-apothicaire" data-i18n="tag.research">Research</span>
+                </div>
+                <div class="card-body">
+                  <p data-i18n="apo.desc">Local 27B language model agent interfaced with Caladrius via the Model Context Protocol (MCP) for domain-specific pharmacokinetic workflows.</p>
+                  <ul class="spec-list">
+                    <li data-i18n="apo.f1">Operates entirely on local hardware with zero external API dependencies.</li>
+                    <li data-i18n="apo.f2">Investigates parity between tool-augmented 27B local models and frontier models on structured PK tasks.</li>
+                    <li data-i18n="apo.f3">A prototype tested on synthetic exercises. Not for a real patient or a regulatory decision.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/officina-dmpk/apothicaire">GitHub →</a>
+                <a href="https://github.com/officina-dmpk/apothicaire/tree/main/docs" data-i18n="link.arch">Architecture &amp; Benchmarks →</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="gate-connector" aria-hidden="true"><div class="gate-stem"></div></div>
+          <div class="gate-box">
+            <div>
+              <div class="gate-title-row">
+                <h4 data-i18n="gate.title">Verification Layer: The Gate</h4>
+                <span class="tag">Python</span>
+              </div>
+              <p data-i18n="gate.desc">Deterministic check, with no model inside, run on every answer of Apothicaire. A number that comes neither from a Caladrius result nor from the user's own message is flagged: the model regenerates once, and whatever remains is listed in a visible badge.</p>
+            </div>
+            <span class="tag" data-i18n="gate.badge">Output Guard</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="research" class="block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-index" data-i18n="s2.index">02 / Ongoing Research &amp; Internal Stack</span>
+              <h2 class="section-title" data-i18n="s2.title">Fundamental AI &amp; Infrastructure</h2>
+            </div>
+            <p class="section-desc" data-i18n="s2.desc">Experimental decision architectures alongside the internal retrieval and orchestration systems powering Officina.</p>
+          </div>
+          <div class="grid-2">
+            <article class="card">
+              <div>
+                <div class="card-top">
+                  <div>
+                    <h3>OLS Prime</h3>
+                    <div class="card-subtitle" data-i18n="ols.sub">Decision Model · Statistical Memory</div>
+                  </div>
+                  <span class="tag" data-i18n="tag.airesearch">AI Research</span>
+                </div>
+                <div class="card-body">
+                  <p data-i18n="ols.desc">Decision model exploring a Softmax-free attention mechanism formulated through Ordinary Least Squares (OLS).</p>
+                  <ul class="spec-list">
+                    <li data-i18n="ols.f1">Replaces standard Softmax attention weighting with closed-form OLS projections.</li>
+                    <li data-i18n="ols.f2">Paired with <code>Matrix</code>, a hierarchical statistical tree memory architecture.</li>
+                    <li data-i18n="ols.f3">Hypotheses are registered before they are tested. In Report n°2, <code>H3</code> does not hold and is published as such.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/officina-dmpk/ols-prime">GitHub →</a>
+                <a href="https://github.com/officina-dmpk/ols-prime/blob/main/docs/reports/report-2.md" data-i18n="link.report">Report n°2 →</a>
+              </div>
+            </article>
+            <article class="card">
+              <div>
+                <div class="card-top">
+                  <div>
+                    <h3>Kit</h3>
+                    <div class="card-subtitle" data-i18n="kit.sub">RAG &amp; Agent Harness</div>
+                  </div>
+                  <span class="tag" data-i18n="tag.internal">Internal Stack</span>
+                </div>
+                <div class="card-body">
+                  <p data-i18n="kit.desc">Proprietary retrieval-augmented generation (RAG) pipeline and agent harness developed internally to support Officina's research and tooling workflows.</p>
+                  <ul class="spec-list">
+                    <li data-i18n="kit.f1">Powers Officina's internal knowledge retrieval, indexing, and agent evaluation loops.</li>
+                    <li data-i18n="kit.f2">Closed-source infrastructure currently in active internal R&amp;D.</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="status-line" data-i18n="kit.status">Status: Active Internal Development · Not Commercially Distributed</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="roadmap" class="block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-index" data-i18n="s3.index">03 / Roadmap</span>
+              <h2 class="section-title" data-i18n="s3.title">Caladrius: Foundations First, Then Features</h2>
+            </div>
+            <p class="section-desc" data-i18n="s3.desc">Finish what is on the branches, then lay three foundations before any new model or estimator. There are no dates. A phase ends on a check against an independent tool, not on a deadline.</p>
+          </div>
+          <div class="row-table">
+            <div class="row">
+              <div class="row-meta"><span data-i18n="rm.p0">Phase 0</span><span class="tag tag-caladrius" data-i18n="rm.current">Current</span></div>
+              <div class="row-main"><div class="row-title" data-i18n="rm.t0">Close iteration 3</div><div class="row-sub" data-i18n="rm.d0">Three compartments, the maximum-likelihood fit, FOCEI with diagnostics and population simulation, merged on main.</div></div>
+              <div class="row-end"><span class="row-end-label" data-i18n="rm.ends">Ends when</span><span data-i18n="rm.e0">The conformance table on main covers them and the digest is equal on the four targets.</span></div>
+            </div>
+            <div class="row">
+              <div class="row-meta"><span data-i18n="rm.p1">Phase 1</span></div>
+              <div class="row-main"><div class="row-title" data-i18n="rm.t1">Numerics kernel</div><div class="row-sub" data-i18n="rm.d1">Nothing visible. Maths functions, linear algebra, quadrature and random streams gathered in one numerics layer that every later phase calls, starting with the <code>caladrius-math</code> crate.</div></div>
+              <div class="row-end"><span class="row-end-label" data-i18n="rm.ends">Ends when</span><span data-i18n="rm.e1">Each function gives the same digest on the four targets.</span></div>
+            </div>
+            <div class="row">
+              <div class="row-meta"><span data-i18n="rm.p2">Phase 2</span></div>
+              <div class="row-main"><div class="row-title" data-i18n="rm.t2">Events, outputs, groups</div><div class="row-sub" data-i18n="rm.d2">Custom dosing regimens and several doses per subject. Multiple-dose, steady-state and urine NCA. Ratios and summary tables.</div></div>
+              <div class="row-end"><span class="row-end-label" data-i18n="rm.ends">Ends when</span><span data-i18n="rm.e2">Each new parameter has a PKNCA oracle case and regimens agree with rxode2.</span></div>
+            </div>
+            <div class="row">
+              <div class="row-meta"><span data-i18n="rm.p3">Phase 3</span></div>
+              <div class="row-main"><div class="row-title" data-i18n="rm.t3">Model interface and likelihood</div><div class="row-sub" data-i18n="rm.d3">Covariate models, the censored likelihood, post hoc estimates, VPC and NPDE, and design evaluation.</div></div>
+              <div class="row-end"><span class="row-end-label" data-i18n="rm.ends">Ends when</span><span data-i18n="rm.e3">Fits agree with nlmixr2, VPC statistics with the vpc package, FIM with PFIM.</span></div>
+            </div>
+          </div>
+          <p class="tracks-intro" data-i18n="rm.tracks">After phase 3, two tracks are independent and can run side by side.</p>
+          <div class="grid-2">
+            <article class="team-card">
+              <div class="team-role" data-i18n="rm.trackA">Track · Phases 4 and 5</div>
+              <h3 class="team-name" data-i18n="rm.models">Models</h3>
+              <ul class="spec-list numbered">
+                <li data-n="4" data-i18n="rm.p4"><strong>ODE solver.</strong> Michaelis-Menten elimination and turnover models. Ends on deSolve and diffsol cross-checks.</li>
+                <li data-n="5" data-i18n="rm.p5"><strong>Model language.</strong> User-written ODE models and target-mediated disposition. Ends when every built-in model, rewritten in the language, reproduces its conformance values.</li>
+              </ul>
+            </article>
+            <article class="team-card">
+              <div class="team-role" data-i18n="rm.trackB">Track · Phases 6 and 7</div>
+              <h3 class="team-name" data-i18n="rm.estimators">Estimators</h3>
+              <ul class="spec-list numbered">
+                <li data-n="6" data-i18n="rm.p6"><strong>More estimators.</strong> Iterative two-stage, SAEM, importance sampling, Laplace and quadrature. Ends on agreement with saemix within Monte Carlo error.</li>
+                <li data-n="7" data-i18n="rm.p7"><strong>Resampling and search.</strong> Bootstrap, likelihood profiling, covariate and structure search. Ends on comparisons with Pharmpy and saemix on public datasets.</li>
+              </ul>
+            </article>
+          </div>
+          <div class="status-line spaced" data-i18n="rm.alongside">Alongside, at any time: XPT files, CDISC result datasets, a report with the run record · Out of scope: bioequivalence, IVIVC</div>
+        </div>
+      </section>
+
+      <section id="publications" class="block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-index" data-i18n="s4.index">04 / Publications &amp; Talks</span>
+              <h2 class="section-title" data-i18n="s4.title">Papers, Preprints &amp; Presentations</h2>
+            </div>
+            <p class="section-desc" data-i18n="s4.desc">Working manuscripts, technical notes, and conference presentations from Officina members.</p>
+          </div>
+          <div class="row-table">
+            <div class="row">
+              <div class="row-meta"><span>2026</span><span class="tag" data-i18n="pub.inprogress">In Progress</span></div>
+              <div class="row-main"><div class="row-title" data-i18n="pub1.title">Benchmarking Tool-Augmented 27B Local Models via MCP on Pharmacokinetic Workflows</div><div class="row-sub" data-i18n="pub1.venue">Manuscript in preparation · Caladrius &amp; Apothicaire</div></div>
+            </div>
+            <div class="row">
+              <div class="row-meta"><span data-i18n="pub2.date">Dec 2026</span><span class="tag" data-i18n="pub.poster">Poster</span></div>
+              <div class="row-main"><div class="row-title">Provenance is cheap, intent is not</div><div class="row-sub" data-i18n="pub2.venue">ELLIS UnConference, Paris · Session: Next Generation of Discovery Loops</div></div>
+            </div>
+            <a class="row" href="https://github.com/officina-dmpk/caladrius/blob/main/docs/reproducibility.md">
+              <div class="row-meta"><span>2026</span><span class="tag" data-i18n="pub.note">Note</span></div>
+              <div class="row-main"><div class="row-title" data-i18n="pub3.title">Cross-Platform Floating-Point Reproducibility and SHA-256 Verification in Rust</div><div class="row-sub" data-i18n="pub3.venue">Technical note · Caladrius</div></div>
+              <span class="row-link" data-i18n="pub.read">Read →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="team" class="block">
+        <div class="container">
+          <div class="section-header">
+            <div>
+              <span class="section-index" data-i18n="s5.index">05 / Researchers</span>
+              <h2 class="section-title" data-i18n="s5.title">Team &amp; Collaborators</h2>
+            </div>
+            <p class="section-desc" data-i18n="s5.desc">Officina brings together independent researchers working across healthcare, applied mathematics, and AI systems.</p>
+          </div>
+          <div class="grid-2">
+            <div class="team-card">
+              <div class="team-role" data-i18n="t1.role">Founder · Principal Researcher</div>
+              <div class="team-name">Abdallah Ragued</div>
+              <p class="team-focus" data-i18n="t1.focus">Pharmacometrics (DMPK), deterministic Rust computing, local LLM agents, and alternative decision architectures.</p>
+            </div>
+            <div class="team-card">
+              <div class="team-role" data-i18n="t2.role">Collaborating Researcher</div>
+              <div class="team-name">Ilias El Badaoui</div>
+              <p class="team-focus" data-i18n="t2.focus">Applied mathematics and inverse problems, with a focus on MRI super-resolution medical imaging.</p>
+            </div>
+          </div>
+          <p class="team-note" data-i18n="team.note">Additional contributors and interdisciplinary research tracks will be listed here as ongoing projects are published.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-grid">
+        <div>
+          <div class="footer-brand">Officina</div>
+          <div data-i18n="footer.desc">Independent Research Laboratory — Healthcare, Mathematics &amp; Local AI</div>
+          <div class="footer-systems">Caladrius · Apothicaire · The Gate · OLS Prime · Kit</div>
+          <div class="footer-systems tight" data-i18n="footer.status">Research prototypes. No regulatory status.</div>
+        </div>
+        <div class="footer-right">
+          <div class="footer-links"><a href="https://github.com/officina-dmpk">GitHub</a></div>
+          <div class="footer-note" data-i18n="footer.credits">The bird and the mortar were drawn by Amina.</div>
+        </div>
+      </div>
+    </footer>
+    <noscript>Officina: https://github.com/officina-dmpk</noscript>
+    <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
